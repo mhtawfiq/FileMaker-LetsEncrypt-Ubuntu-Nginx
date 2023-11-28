@@ -1,6 +1,9 @@
 ### FileMakerServer-LetsEncrypt-Ubuntu-Nginx-Certbot
 Bash scripts for fetching and renewing Let's Encrypt (certbot) certificates for FileMaker Server running on Linux (Ubuntu) using the default system timers installed by snap when you install certbot and hooks to restart FMS only when the certificate is renewed and at a certain time of day to avoid disruption of access to users.
 
+### Reference Article
+https://mhtawfiq.github.io/deploying-filemaker-server-on-ubuntu-linux-with-lets-encrypt-ssl/
+
 #### Initial Setup Instructions:
 ##### 1. Setup Ubuntu + install FMS (as of now, its 19.6.3)
 ##### 2. Install certbot
