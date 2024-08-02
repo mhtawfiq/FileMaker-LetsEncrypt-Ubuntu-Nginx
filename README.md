@@ -12,27 +12,27 @@ https://mhtawfiq.github.io/deploying-filemaker-server-on-ubuntu-linux-with-lets-
 apt install at
 ```
 
-##### 2. Install certbot
+##### 3. Install certbot
 ```
 sudo snap install core; sudo snap refresh core
 sudo apt-get remove certbot
 sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
-##### 3. Logged in as root:
+##### 4. Logged in as root:
 ```
 cd ~/
 mkdir fms-ssl
 cd fms-ssl/
 ```
-##### 4. Download & make executable
+##### 5. Download & make executable
 ```
 wget https://raw.githubusercontent.com/mhtawfiq/FileMaker-LetsEncrypt-Ubuntu-Nginx/main/fms-ssl/get-ssl.sh
 wget https://raw.githubusercontent.com/mhtawfiq/FileMaker-LetsEncrypt-Ubuntu-Nginx/main/fms-ssl/renew-cert.sh
 wget https://raw.githubusercontent.com/mhtawfiq/FileMaker-LetsEncrypt-Ubuntu-Nginx/main/fms-ssl/renew-cert-at.sh
 chmod +x get-ssl.sh renew-cert.sh renew-cert-at.sh
 ``` 
-##### 5. Edit content of scripts
+##### 6. Edit content of scripts
 ```
 nano get-ssl.sh
 ```
@@ -45,7 +45,7 @@ Set domain, fms admin username and password
 nano renew-cert-at.sh
 ```
 Set the time of day to schedule FileMaker Server restart when the certificate is renewed by certbot systemctl timer
-##### 6. Generate the ssl certificate for the first time
+##### 7. Generate the ssl certificate for the first time
 ```
 sudo ./get-ssl.sh
 ```
