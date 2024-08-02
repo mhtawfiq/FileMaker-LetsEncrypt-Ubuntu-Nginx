@@ -6,6 +6,12 @@ https://mhtawfiq.github.io/deploying-filemaker-server-on-ubuntu-linux-with-lets-
 
 #### Initial Setup Instructions:
 ##### 1. Setup Ubuntu + install FMS (as of now, its 19.6.3)
+
+##### 2. Install at
+```
+apt install at
+```
+
 ##### 2. Install certbot
 ```
 sudo snap install core; sudo snap refresh core
