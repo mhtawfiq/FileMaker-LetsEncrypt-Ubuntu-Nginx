@@ -34,6 +34,12 @@ fmsadmin certificate delete --yes -u ${FMADMIN} -p ${FMPASS}
 # Install the certificate
 fmsadmin certificate import "${SERVER_PATH}CStore/fullchain.pem" --keyfile "${SERVER_PATH}CStore/privkey.pem" -y -u ${FMADMIN} -p ${FMPASS}
 
+# Close all databases on FileMaker Server
+fmsadmin close -y -u ${FMS_USER} -p ${FMS_PASS} -m "All Databases will closed in two minutes for scheduled maintenance." -t 120
+
+# Provide time for the databases to close. Two minutes for the user warning and two minutes to close the databases.
+sleep 240
+
 # Stop FM service
 sudo service fmshelper stop
 
