@@ -35,7 +35,7 @@ fmsadmin certificate delete --yes -u ${FMADMIN} -p ${FMPASS}
 fmsadmin certificate import "${SERVER_PATH}CStore/fullchain.pem" --keyfile "${SERVER_PATH}CStore/privkey.pem" -y -u ${FMADMIN} -p ${FMPASS}
 
 # Close all databases on FileMaker Server
-fmsadmin close -y -u ${FMS_USER} -p ${FMS_PASS} -m "All Databases will closed in two minutes for scheduled maintenance." -t 120
+fmsadmin close -y -u ${FMADMIN} -p ${FMPASS} -m "All Databases will closed in two minutes for scheduled maintenance." -t 120
 
 # Provide time for the databases to close. Two minutes for the user warning and two minutes to close the databases.
 sleep 240
